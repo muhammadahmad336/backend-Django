@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1 data-aos="fade-down">Contact Us</h1>
+        <nav data-aos="fade-right">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 data-aos="fade-up">Get in Touch</h2>
+        <a href="https://wa.me/03191474336" data-aos="fade-right">Whatsapp</a>
+        <a href="https://t.me/YourTelegramUsername" data-aos="fade-left">Telegram</a>
+        <a href="https://www.facebook.com/profile.php?id=61565727341150" data-aos="fade-right">Facebook</a>
+    </main>
+    <footer data-aos="fade-up">
+        <p>&copy; 2024 Ahmad's E-Commerce</p>
+        <a href="mailto:ahmadyaseenahmad336@gmail.com">Contact Us</a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

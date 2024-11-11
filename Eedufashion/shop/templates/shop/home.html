@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Include AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1 data-aos="fade-down">Welcome to Ahmad's E-Commerce</h1>
+        <nav data-aos="fade-right">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="products">
+            <h2 data-aos="fade-up">Our Products</h2>
+            {% for product in products %}
+            <div class="product" data-aos="zoom-in">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+                <button data-aos="fade-right">Buy Now</button>
+                <button data-aos="fade-left">Add to Cart</button>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+    <footer data-aos="fade-up">
+        <p>&copy; 2024 Ahmad's E-Commerce</p>
+        <a href="mailto:ahmadyaseenahmad336@gmail.com">Contact Us</a>
+    </footer>
+    <!-- Include AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
